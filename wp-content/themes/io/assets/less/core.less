@@ -19,11 +19,13 @@
 /* ====================================================
     LESS VARS
 ==================================================== */
-@c-bg: #F8F8F8;
+@c-bg: #F4F4F4;
 @c-copy: #222;
 @c-blue: #0055CC;
+@c-red: Crimson;
 
 @f-stack1: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+@f-stack2: monospace;
 
 /* ====================================================
     BASE STYLES
@@ -44,10 +46,6 @@
     vertical-align: middle;
 }
 
-
-::-moz-selection{ background:#333; color:#EEE; text-shadow:none; }
-::selection { background:#333; color:#EEE; text-shadow:none; }
-
 html, body { -web-font-smoothing: antialiased; }
 body { color: @c-copy; background-color: @c-bg; font-size: 14px; line-height: 1.6; font-family: @f-stack1; }
 
@@ -63,6 +61,12 @@ p { margin-bottom: 10px; }
 a { color: @c-blue; }
 a:hover { color: lighten(@c-blue, 5%);}
 
+input, textarea { border: 1px solid #E8E8E8; padding: 4px 10px; }
+code { font-family: @f-stack2; }
+
+::-moz-selection{ background: @c-blue; color: #FFF; text-shadow: none; }
+::selection { background: @c-blue; color: #FFf; text-shadow: none; }
+
 
 /* ====================================================
     LAYOUT STYLES
@@ -72,7 +76,15 @@ a:hover { color: lighten(@c-blue, 5%);}
 ==================================================== */
 #wrapper { max-width: 760px; margin: 20px auto; }
 
+#respond { clear: both; margin-top: 20px; }
 
+#commentform {
+    width: 66%;
+    > p { clear: both; margin-bottom: 10px; overflow: hidden; }
+    label { float: left; width: 30%; margin-right: 2%; text-align: right; }
+    input, textarea { float: left; width: 68%; font-family: @f-stack1; font-size: 14px; }
+    [type="submit"] { float: right; }
+}
 /* ====================================================
     MODULES STYLES
 
@@ -81,6 +93,82 @@ a:hover { color: lighten(@c-blue, 5%);}
 ==================================================== */
 .post-meta { color: #999; margin: 0px 0px 10px; }
 .html-char.lrg { font-size: 18px; }
+.post-title { margin-bottom: 0px; }
+[type="submit"],
+btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid darken(@c-blue, 10%); }
+.comment {
+    clear: both;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: #F8F8F8;
+    padding: 10px;
+    border: 1px solid #E8E8E8;
+    .comment-author { font-weight: bold; margin-bottom: 0px; }
+    .comment-meta { float: left; width: 25%; }
+    .comment-body {
+        float: right;
+        padding: 0px 0px 10px 10px;
+        width: 75%;
+        color: #666;
+        li {
+            margin-left: 20px;
+            margin-right: 20px;
+            position: relative;
+            &:before { content: "//"; position: absolute; left: -20px; color: #DDD; }
+            /* JSON array-stying */
+            /*&:before, &:after { color: #CCC; }
+            &:before {
+                content: "[";
+                position: absolute;
+                left: -14px;
+            }
+            &:after {
+                content: "],";
+                position: absolute;
+                right: -14px;
+            }
+            &:last-child:after { content: "]"; right: -10px; }*/
+        }
+    }
+    .comment-reply { float: right; }
+    .children {
+        width: 90%;
+        float: right;
+        li {
+            background: #FDFDFD;
+        }
+    }
+    .notapproved {
+        color: @c-red;
+    }
+    time { color: #999; font-size: 12px; }
+    code { white-space: pre; }
+    blockquote {
+        padding: 6px 10px;
+        margin: 16px 0px;
+        border-top: 1px solid #DDD;
+        border-bottom: 1px solid #DDD;
+        position: relative;
+        text-align: center;
+        font-style: italic;
+        p { margin: 0px; }
+        &:before {
+            content: "“";
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+        &:after {
+            content: "”";
+            position: absolute;
+            right: 0px;
+            bottom: 0px;
+        }
+    }
+}
+
+
+
 
 /* ====================================================
     STATES STYLES
@@ -93,72 +181,136 @@ a:hover { color: lighten(@c-blue, 5%);}
     views like the home page or the inside page.
 ==================================================== */
 
+/* GitHub heart-pumping animation */
+@-webkit-keyframes heart-throb {
+    0%   { font-size: 100%; }
+    8%   { font-size: 120%; }
+    30%  { font-size: 100%; }
+}
+@-moz-keyframes heart-throb {
+    0%   { font-size: 100%; }
+    8%   { font-size: 120%; }
+    30%  { font-size: 100%; }
+}
+@-ms-keyframes heart-throb {
+    0%   { font-size: 100%; }
+    8%   { font-size: 120%; }
+    30%  { font-size: 100%; }
+}
+@keyframes heart-throb {
+    0%   { font-size: 100%; }
+    8%   { font-size: 120%; }
+    30%  { font-size: 100%; }
+}
+
+/* Twitter notes animation */
+@-webkit-keyframes sing {
+    0%   { -webkit-transform: rotate(0deg); }
+    25%  { -webkit-transform: rotate(10deg); }
+    75%  { -webkit-transform: rotate(-10deg); }
+    100% { -webkit-transform: rotate(0deg); }
+}
+@-moz-keyframes sing {
+    0%   { -moz-transform: rotate(0deg); }
+    25%  { -moz-transform: rotate(10deg); }
+    75%  { -moz-transform: rotate(-10deg); }
+    100% { -moz-transform: rotate(0deg); }
+}
+@-ms-keyframes sing {
+    0%   { -ms-transform: rotate(0deg); }
+    25%  { -ms-transform: rotate(10deg); }
+    75%  { -ms-transform: rotate(-10deg); }
+    100% { -ms-transform: rotate(0deg); }
+}
+@keyframes sing {
+    0%   { transform: rotate(0deg); }
+    25%  { transform: rotate(10deg); }
+    75%  { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Hand-animation for drawing/writing effect */
+@-webkit-keyframes write {
+    0%   { -webkit-transform: translate(0px); }
+    50%  { -webkit-transform: translate(3px); }
+    100% { -webkit-transform: translate(0px); }
+}
+@-moz-keyframes write {
+    0%   { -moz-transform: translate(0px); }
+    50%  { -moz-transform: translate(3px); }
+    100% { -moz-transform: translate(0px); }
+}
+@-ms-keyframes write {
+    0%   { -ms-transform: translate(0px); }
+    50%  { -ms-transform: translate(3px); }
+    100% { -ms-transform: translate(0px); }
+}
+@keyframes write {
+    0%   { transform: translate(0px); }
+    50%  { transform: translate(3px); }
+    100% { transform: translate(0px); }
+}
 
 
+.m-cssanimations {
+    .animate-heart {
+        -webkit-animation: heart-throb 4s infinite;
+        -moz-animation: heart-throb 4s infinite;
+        -ms-animation: heart-throb 4s infinite;
+        animation: heart-throb 4s infinite;
+        &:hover {
+            -moz-animation: heart-throb 0.5s infinite;
+        }
+    }
+    .animate-music {
+        -webkit-animation: sing linear 1.5s infinite;
+        -moz-animation: sing linear 1.5s infinite;
+        -ms-animation: sing linear 1.5s infinite;
+        animation: sing linear 1.5s infinite;
+    }
+    /*
+    .animate-writing {
+        -webkit-animation: write ease 2s infinite;
+        -moz-animation: write ease 2s infinite;
+        -ms-animation: write ease 2s infinite;
+        animation: write ease 2s infinite;
+    }
+    */
+}
+.m-textshadow {
+    body { text-shadow: 1px 1px 0px #FFF; }
+}
+.m-borderradius {
+    .comment,
+    input, textarea {
+        border-radius: 4px;
+    }
+}
+.m-cssgradients {
+    [type="submit"],
+    .btn {
+        background: -moz-linear-gradient(top, darken(@c-blue, 7%), lighten(@c-blue, 7%));
+        &:hover {
+            background: -moz-linear-gradient(top, lighten(@c-blue, 7%), darken(@c-blue, 7%));
+        }
+    }
+}
+.m-boxshadow {
+    [type="submit"],
+    .btn {
+        box-shadow: inset 0px 1px 0px lighten(@c-blue, 8%), inset 0px -1px 0px lighten(@c-blue, 10%);
+
+        &:hover {
+            box-shadow: inset 0px -1px 0px lighten(@c-blue, 10%),  inset 0px 1px 0px lighten(@c-blue, 8%);
+        }
+    }
+}
 
 /* ==|== Media Queries ======================================================
     PLACEHOLDER Media Queries for Responsive Design.
     These override the primary ('mobile first') styles
     Modify as content requires.
 ========================================================================== */
-
-
-/* HTML5 BOILERPLATE ======================================================== */
-
-/* Style adjustments for viewports 480px and over go here */
-@media only screen and (min-width: 480px) {}
-
-/* Style adjustments for viewports 768px and over go here */
-@media only screen and (min-width: 768px) {}
-
-
-
-/* TWITTER BOOTSTRAP 2.0 ==================================================== */
-
-/* Smartphones: Landscape and down (480px and below) */
-@media (max-width: 480px) {}
- 
-/* Landscape phone to portrait tablet (480px to 768px) */
-@media (max-width: 768px) {}
-
-/* Portrait tablet to landscape and desktop (768px to 980px)  */
-@media (min-width: 768px) and (max-width: 980px) {}
- 
-/* Large desktop */
-@media (min-width: 1200px) {}
-
-
-
-/* OTHER ONES FOUND ON THE WEB ============================================== */
-
-/* Smartphones (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {}
-
-/* Smartphones (landscape) ----------- */
-@media only screen and (min-width : 321px) {}
-
-/* Smartphones (portrait) ----------- */
-@media only screen and (max-width : 320px) {}
-
-/* iPads (portrait and landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {}
-
-/* iPads (landscape) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}
-
-/* iPads (portrait) ----------- */
-@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}
-
-/* Desktops and laptops ----------- */
-@media only screen and (min-width : 1224px) {}
-
-/* Large screens ----------- */
-@media only screen and (min-width : 1824px) {}
-
-/* iPhone 4 ----------- */
-@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {}
-
-
 
 
 /* ==|== print styles =======================================================

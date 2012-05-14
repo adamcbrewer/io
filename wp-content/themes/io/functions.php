@@ -633,4 +633,63 @@ function excerpt_read_more_link($output) {
 }
 add_filter('the_excerpt', 'excerpt_read_more_link');
 
+if ( ! function_exists( 'io_comments' ) ) :
+	/**
+	 * Template for comments and pingbacks.
+	 *
+	 * To override this walker in a child theme without modifying the comments template
+	 * simply create your own boilerplate_comment(), and that function will be used instead.
+	 *
+	 * Used as a callback by wp_list_comments() for displaying the comments.
+	 *
+	 * @since Twenty Ten 1.0
+	 */
+	function io_comments( $comment, $args, $depth ) {
+		$GLOBALS['comment'] = $comment;
+		switch ( $comment->comment_type ) :
+			case '' :
+		?>
+
+		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+			
+			<article id="comment-<?php comment_ID(); ?>">
+				
+				<aside class="comment-meta">
+					<p class="comment-author"><?php echo get_comment_author(); ?></p>
+					<time datetime="<?php echo get_comment_date('Y-m-d'); ?> <?php echo get_comment_time(); ?>">
+						<?php echo get_comment_date('j F Y'); ?> <?php echo get_comment_time(); ?>
+					</time>
+
+					<?php if ( $comment->comment_approved == '0' ) : ?>
+						<p class="notapproved"><?php _e( 'Your comment is awaiting moderation.', 'boilerplate' ); ?></p>
+					<?php endif; ?>
+
+				</aside>
+
+
+				<div class="comment-body">
+					
+					<?php comment_text(); ?>
+
+					<span class="comment-reply">
+						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => 'Reply', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					</span>
+
+				</div>
+				
+			</article><!-- #comment-##  -->
+
+		<?php
+				break;
+			case 'pingback'  :
+			case 'trackback' :
+		?>
+		<li class="post pingback">
+			<p><?php _e( 'Pingback:', 'boilerplate' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __('(Edit)', 'boilerplate'), ' ' ); ?></p>
+		<?php
+				break;
+		endswitch;
+	}
+endif;
+
 ?>
