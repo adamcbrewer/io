@@ -671,8 +671,8 @@ if ( ! function_exists( 'io_comments' ) ) :
 					
 					<?php comment_text(); ?>
 
-					<span class="comment-reply">
-						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => 'Reply', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+					<span class="comment-reply" title="reply">
+						<?php comment_reply_link( array_merge( $args, array( 'reply_text' => '&#9166;', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
 					</span>
 
 				</div>

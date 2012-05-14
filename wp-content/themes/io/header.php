@@ -42,20 +42,17 @@
 	<meta name="MSSmartTagsPreventParsing" content="true">
 	<meta name="robots" content="all">
 	
-	<meta name="Author" content="">
+	<meta name="Author" content="Adam Brewer">
 	<link type="text/plain" rel="author" href="humans.txt" />
-	<meta name="Copyright" content="">
+	<meta name="Copyright" content="Adam Brewer">
 	
-	<meta name="description" content="">
-	<meta name="keywords" content="">
+	<meta name="description" content="Thoughts on web-development, from null.">
+	<meta name="keywords" content="html, css, javascript, web dev, front-end, responsive, mobile, code, development">
 
 	<!-- FACEBOOK OPEN GRAPH -->
-	<meta property="og:title" content=""/> <!-- subject title -->
-	<meta property="og:type" content=""/> <!-- More information: http://developers.facebook.com/docs/opengraph/ -->
-	<meta property="og:image" content=""/> <!-- image must be at least 50px by 50px with a maximum ratio of 3:1 -->
-	<meta property="og:url" content=""/> <!-- URL of the page being liked -->
-	<meta property="og:site_name" content=""/> <!-- A human-readable name for your site -->
-	<meta property="og:description" content=""/> <!-- basic site description -->
+	<meta property="og:title" content="<?php echo $title ? $title : 'BrewerLogic: I/O'; ?>"/> <!-- subject title -->
+	<meta property="og:site_name" content="BrewerLogic: I/O"/> <!-- A human-readable name for your site -->
+	<meta property="og:description" content="Thoughts on web-development, from null."/> <!-- basic site description -->
 
 	<!-- 
 		Signal to search engines and others "Use this URL for this page!" 

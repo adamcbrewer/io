@@ -75,8 +75,11 @@ code { font-family: @f-stack2; }
     Layouts hold one or more modules together.
 ==================================================== */
 #wrapper { max-width: 760px; margin: 20px auto; }
-
-#respond { clear: both; margin-top: 20px; }
+#header {
+    margin-bottom: 40px;
+    h1 { margin-bottom: 0px; }
+}
+#respond { clear: both; margin-top: 40px; }
 
 #commentform {
     width: 66%;
@@ -91,7 +94,8 @@ code { font-family: @f-stack2; }
     Modules are the reusable, modular parts of our design. 
     They are the callouts, the sidebar sections, the product lists and so on.
 ==================================================== */
-.post-meta { color: #999; margin: 0px 0px 10px; }
+.post-meta { color: #999; margin: 0px 0px 20px; }
+.post { margin-bottom: 40px; }
 .html-char.lrg { font-size: 18px; }
 .post-title { margin-bottom: 0px; }
 [type="submit"],
@@ -101,9 +105,9 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
     margin-bottom: 10px;
     overflow: hidden;
     background: #F8F8F8;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #E8E8E8;
-    .comment-author { font-weight: bold; margin-bottom: 0px; }
+    .comment-author { font-weight: bold; margin-bottom: 0px; text-transform: capitalize; &:after { content: "said..."; font-weight: normal; font-style: italic; color: #BBB; margin-left: 5px; font-size: 90%; } }
     .comment-meta { float: left; width: 25%; }
     .comment-body {
         float: right;
@@ -111,31 +115,35 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
         width: 75%;
         color: #666;
         li {
-            margin-left: 20px;
+            margin-left: 40px;
             margin-right: 20px;
             position: relative;
             &:before { content: "//"; position: absolute; left: -20px; color: #DDD; }
-            /* JSON array-stying */
-            /*&:before, &:after { color: #CCC; }
-            &:before {
-                content: "[";
-                position: absolute;
-                left: -14px;
-            }
-            &:after {
-                content: "],";
-                position: absolute;
-                right: -14px;
-            }
-            &:last-child:after { content: "]"; right: -10px; }*/
         }
     }
     .comment-reply { float: right; }
     .children {
-        width: 90%;
+        width: 96%;
         float: right;
-        li {
-            background: #FDFDFD;
+        /*position: relative;*/
+        .comment-author {
+            &:after { content: "replied..."; }
+        }
+        > li {
+            border: 0px;
+            padding: 0px 0px 0px 20px;
+            position: relative;
+            &:before {
+                content: "➥";
+                position: absolute;
+                left: 1px;
+                top: 0px;
+                color: #BBB;
+            }
+        }
+        .bypostauthor {
+            .comment-author:after { content: "stated..."; }
+            &:before { content: "ℬ"; }
         }
     }
     .notapproved {
@@ -166,7 +174,6 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
         }
     }
 }
-
 
 
 
