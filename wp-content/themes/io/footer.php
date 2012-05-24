@@ -11,7 +11,7 @@
 				<br />
 				<br />
 				<p>
-					&copy; <a target="_blank" title="adamcbrewer.com" href="http://adamcbrewer.com">Adam Brewer</a> <?php echo date('Y', time('now')); ?>. I <span class="animate-music">&#9835;</span> <span class="animate-music">&#9834;</span> on <a title="@adamcbrewer" target="_blank" href="http://twitter.com/adamcbrewer">Twitter</a>, <span class="animate-heart">&#10084;</span> <a target="_blank" title="adamcbrewer on GitHub" href="https://github.com/adamcbrewer">GitHub</a> and <span class="html-char lrg animate-writing">&#9998;</span> <a title="if all-else fails" href="mailto:adamcbrewer@gmail.com">Gmail</a>, or get some <a href="<?= site_url('feed'); ?>" title="subscribe">RSS</a>.
+					&copy; <a target="_blank" title="adamcbrewer.com" href="http://adamcbrewer.com">Adam Brewer</a> <?php echo date('Y', time('now')); ?>. I <span class="animate-music">&#9835;</span> <span class="animate-music">&#9834;</span> on <a title="@adamcbrewer" target="_blank" href="http://twitter.com/adamcbrewer">Twitter</a> and <span class="animate-heart">&#10084;</span> <a target="_blank" title="adamcbrewer on GitHub" href="https://github.com/adamcbrewer">GitHub</a>. Sample some <a href="<?= site_url('feed'); ?>" title="subscribe">RSS</a>.
 				</p>
 
 			</footer><!-- footer -->
