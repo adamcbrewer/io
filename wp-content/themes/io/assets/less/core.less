@@ -101,6 +101,14 @@ code { font-family: @f-stack2; }
 [type="submit"],
 btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid darken(@c-blue, 10%); }
 .post-copy {
+    img {
+        max-width:100%;
+        border: 1px solid #BBB;
+        &.alignleft { float: left; margin-right: 20px; margin-bottom: 20px; }
+        &.alignright { float: left; margin-left: 20px; margin-bottom: 20px; }
+        &.aligncenter,
+        &.alignnone { clear: both; margin-top: 20px; margin-bottom: 20px; }
+    }
     > pre {
         margin: 30px 0px 10px;
         code {
@@ -132,6 +140,41 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
                 color: #BBB;
                 margin-right: 10px;
             }
+        }
+    }
+    > blockquote {
+        margin: 40px auto;
+        max-width: 80%;
+        border: 1px solid #BBB;
+        background-color: #EEE;
+        position: relative;
+        text-align: center;
+        font-style: italic;
+        overflow: hidden;
+        font-size: 1.3em;
+        color: #666;
+        p { margin: 0px; padding: 16px; }
+        &:before {
+            position: absolute;
+            line-height: 00px;
+            font-size: 40px;
+            color: #BBB;
+        }
+        &:before { content: "“"; left: 8px; top: 24px; }
+        &:after {
+            content: "-- "attr(data-credit);
+            color: #FFF;
+            background: @c-blue;
+            padding: 6px 10px;
+            text-shadow: 1px 1px 1px #111;
+            font-size: 12px;
+            text-align: right;
+            display: block;
+            opacity: 0.5;
+        }
+        &:hover:after {
+            opacity: 1;
+            padding-right: 16px;
         }
     }
 }
@@ -326,7 +369,9 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
 }
 .m-borderradius {
     .comment,
-    .post-copy > pre code {
+    .post-copy > pre code,
+    .post-copy > blockquote,
+    .post-copy img {
         -webkit-border-radius: 4px;
         -moz-border-radius: 4px;
         border-radius: 4px;
@@ -362,6 +407,15 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
         &:hover {
             box-shadow: inset 0px -1px 0px lighten(@c-blue, 10%),  inset 0px 1px 0px lighten(@c-blue, 8%);
         }
+    }
+}
+.m-csstransitions {
+    .post-copy > blockquote:after {
+        -webkit-transition: 0.4s opacity ease 0s, 0.4s padding ease-out 0.1s;
+        -moz-transition: 0.4s opacity ease 0s, 0.4s padding ease-out 0.1s;
+        -o-transition: 0.4s opacity ease 0s, 0.4s padding ease-out 0.1s;
+        -ms-transition: 0.4s opacity ease 0s, 0.4s padding ease-out 0.1s;
+        transition: 0.4s opacity ease 0s, 0.4s padding ease-out 0.1s;
     }
 }
 
