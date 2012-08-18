@@ -44,7 +44,7 @@
 
 		var _gaq = _gaq || [];
 		_gaq.push(['_setAccount', 'UA-31471338-1']);
-		_gaq.push(['_setDomainName', 'brewerlogic.com']);
+		_gaq.push(['_setDomainName', 'io.brewerlogic.com']);
 		_gaq.push(['_trackPageview']);
 
 		(function() {

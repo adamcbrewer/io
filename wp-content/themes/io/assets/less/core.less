@@ -101,6 +101,7 @@ code { font-family: @f-stack2; }
 [type="submit"],
 btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid darken(@c-blue, 10%); }
 .post-copy {
+    > p { margin-bottom: 20px; }
     img {
         max-width:100%;
         border: 1px solid #BBB;
@@ -161,7 +162,7 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
             color: #BBB;
         }
         &:before { content: "“"; left: 8px; top: 24px; }
-        &:after {
+        /*&:after {
             content: "-- "attr(data-credit);
             color: #FFF;
             background: @c-blue;
@@ -175,8 +176,23 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
         &:hover:after {
             opacity: 1;
             padding-right: 16px;
+        }*/
+        > footer {
+            color: #FFF;
+            background: @c-blue;
+            padding: 6px 10px;
+            text-shadow: 1px 1px 1px #111;
+            font-size: 12px;
+            text-align: right;
+            display: block;
+            opacity: 0.9;   
+        }
+        &:hover > footer {
+            opacity: 1;
+            padding-right: 16px;
         }
     }
+    .spotify-embed { margin: 10px 20px 20px; }
 }
 .comment {
     clear: both;
@@ -219,8 +235,8 @@ btn { padding: 6px 10px; background: @c-blue; color: #FFF; border: 1px solid dar
             }
         }
         .bypostauthor {
-            .comment-author:after { content: "stated..."; }
-            &:before { content: "ℬ"; }
+            .comment-author:after { content: "replied..."; }
+            /*&:before { content: "ℬ"; }*/
         }
     }
     .notapproved {
