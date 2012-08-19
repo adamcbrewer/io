@@ -692,4 +692,8 @@ if ( ! function_exists( 'io_comments' ) ) :
 	}
 endif;
 
+function feedburner_url($type = NULL) {
+	return 'http://feeds.feedburner.com/brewerlogic/io';
+}
+
 ?>

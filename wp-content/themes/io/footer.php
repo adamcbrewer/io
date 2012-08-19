@@ -11,7 +11,7 @@
 				<br />
 				<br />
 				<p>
-					&copy; <a target="_blank" title="adamcbrewer.com" href="http://adamcbrewer.com">Adam Brewer</a> <?php echo date('Y', time('now')); ?>. I <span class="animate-music">&#9835;</span> <span class="animate-music">&#9834;</span> on <a title="@adamcbrewer" target="_blank" href="http://twitter.com/adamcbrewer">Twitter</a> and <span class="animate-heart">&#10084;</span> <a target="_blank" title="adamcbrewer on GitHub" href="https://github.com/adamcbrewer">GitHub</a>. Sample some <a href="<?= site_url('feed'); ?>" title="subscribe">RSS</a>.
+					&copy; <a target="_blank" title="adamcbrewer.com" href="http://adamcbrewer.com">Adam Brewer</a> <?php echo date('Y', time('now')); ?>. I <span class="animate-music">&#9835;</span> <span class="animate-music">&#9834;</span> on <a title="@adamcbrewer" target="_blank" href="http://twitter.com/adamcbrewer">Twitter</a> and <span class="animate-heart">&#10084;</span> <a target="_blank" title="adamcbrewer on GitHub" href="https://github.com/adamcbrewer">GitHub</a>. There's <a href="<?= feedburner_url('all'); ?>" title="subscribe">RSS</a>, if you fancy a cup of that.
 				</p>
 
 			</footer><!-- footer -->
@@ -39,6 +39,8 @@
 	</script>
 
 	<script src="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/js/libs/modernizr.custom.49019.js"></script>
+	<!-- <script src="<?php // bloginfo( 'stylesheet_directory' ); ?>/assets/js/libs/zepto-1.0.min.js"></script> -->
+	<!-- <script src="<?php // bloginfo( 'stylesheet_directory' ); ?>/assets/js/script.min.js"></script> -->
 
 	<script type="text/javascript">
 

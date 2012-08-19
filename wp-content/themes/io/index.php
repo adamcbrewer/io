@@ -35,7 +35,7 @@ get_header(); ?>
 				<header class="post-meta">
 					<time datetime="<?php the_time('d/m/Y, g:i A') ?>"><?php the_time('l, jS F Y') ?></time> &#9734;
 					<a href="<?php the_permalink() ?>/#comments" rel="bookmark" title="view comments"><?php comments_number( '0 comments', '1 comment', '% comments' ); ?></a> &#9734;
-					<a href="<?= site_url('feed'); ?>" title="subscribe">rss</a> &#9734;
+					<a href="<?= feedburner_url('all'); ?>" title="subscribe">rss</a> &#9734;
 					<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&amp;text=<?php the_title(); ?>&amp;via=adamcbrewer" target="_blank" title="tweet">tweet</a> &#9734;
 					<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink(); ?>&amp;t=BrewerLogic" target="_blank" title="share">fb</a> &#9734;
 					<a href="http://plusone.google.com/_/+1/confirm?hl=en&amp;url=<?php the_permalink(); ?>" target="_blank" title="+1">g+</a>
